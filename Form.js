@@ -54,7 +54,7 @@ class Form {
         this.menu.size(100,100);
         this.nextLevel.size(100,100);
 
-        this.title.html("Trash Can");
+        this.title.html("Go Green");
         this.title.position(580,100);
 
         this.button.position(580,250);
@@ -85,6 +85,7 @@ class Form {
             gameState = 'mainMenu';
           });
 
+          if(gameState === 'startingMenu') {
           this.level1.hide();
           this.level2.hide();
           this.level3.hide();
@@ -98,8 +99,20 @@ class Form {
           this.restart.hide();
           this.menu.hide();
           this.nextLevel.hide();
+          }
 
         if(gameState === 'mainMenu') {
+          this.level1.show();
+          this.level2.show();
+          this.level3.show();
+          this.level4.show();
+          this.level5.show();
+          this.level6.show();
+          this.level7.show();
+          this.level8.show();
+          this.level9.show();
+          this.level10.show();
+          console.log("show buttons")
           this.level1.position(50,100);
           this.level2.position(100,100);
           this.level3.position(150,100);
@@ -129,7 +142,6 @@ class Form {
           this.restart.show();
           this.restart.position(150,50);
           this.restart.mousePressed(()=>{
-            this.nextLevel.hide();
             Matter.Body.setPosition(paperObject.body,{x : 250, y :580});
           });
         });
@@ -141,27 +153,31 @@ class Form {
            this.restart.show();
            this.restart.position(600,200);
            this.nextLevel.mousePressed(()=>{
-           this.restart.hide();
-           this.menu.hide();
-           this.nextLevel.hide();
+            this.nextLevel.hide();
             gameState = 'level2';
+            obstacle1 = new Ground(750,450,180,25);
+            Matter.Body.setPosition(paperObject.body,{x : 250, y :580});
+            this.menu.show();
+            this.menu.position(50,50);
+            this.restart.show();
+            this.restart.position(150,50);
           });
           this.menu.mousePressed(()=>{
            this.restart.hide();
            this.menu.hide();
            this.nextLevel.hide();
-            gameState = 'mainMenu';
+           gameState = 'mainMenu';
+           
           });
            this.restart.mousePressed(()=>{
            this.restart.hide();
            this.menu.hide();
            this.nextLevel.hide();
-            gameState = 'level1';
-            Matter.Body.setPosition(paperObject.body,{x : 250, y :580});
-
-            console.log(gameState);
+           gameState = 'level1';
+           Matter.Body.setPosition(paperObject.body,{x:250, y:580});
           });
         }
+
         this.level2.mousePressed(()=>{
           this.level1.hide();
           this.level2.hide();
@@ -174,21 +190,48 @@ class Form {
           this.level9.hide();
           this.level10.hide();
           gameState = 'level2';
+          this.menu.show();
           this.menu.position(50,50);
-          this.restart.position(100,50);
+          this.restart.show();
+          this.restart.position(150,50);
+          this.restart.mousePressed(()=>{
+            Matter.Body.setPosition(paperObject.body,{x : 250, y :580});
+          });
         });
         if(gameState === 'level2Complete') {
-          this.nextLevel.position(500,300);
-          this.menu.position(500,100);
-          this.restart.position(500,200);
-          this.nextLevel.mousePressed(()=>{
-            this.restart.hide();
-            this.menu.hide();
+           this.nextLevel.show();
+           this.nextLevel.position(400,200);
+           this.menu.show();
+           this.menu.position(500,200);
+           this.restart.show();
+           this.restart.position(600,200);
+           this.nextLevel.mousePressed(()=>{
             this.nextLevel.hide();
             gameState = 'level3';
+            obstacle2 = new Ground(600,420,180,25);
+            Matter.Body.setPosition(paperObject.body,{x : 250, y :580});
+            this.menu.show();
+            this.menu.position(50,50);
+            this.restart.show();
+            this.restart.position(150,50);
+          });
+          this.menu.mousePressed(()=>{
+           this.restart.hide();
+           this.menu.hide();
+           this.nextLevel.hide();
+           gameState = 'mainMenu';
+           
+          });
+           this.restart.mousePressed(()=>{
+           this.restart.hide();
+           this.menu.hide();
+           this.nextLevel.hide();
+           gameState = 'level2';
+           Matter.Body.setPosition(paperObject.body,{x:250, y:580});
           });
         }
-        this.level3.mousePressed(()=>{
+
+          this.level3.mousePressed(()=>{
           this.level1.hide();
           this.level2.hide();
           this.level3.hide();
@@ -200,20 +243,48 @@ class Form {
           this.level9.hide();
           this.level10.hide();
           gameState = 'level3';
+          this.menu.show();
           this.menu.position(50,50);
-          this.restart.position(100,50);
+          this.restart.show();
+          this.restart.position(150,50);
+          this.restart.mousePressed(()=>{
+            Matter.Body.setPosition(paperObject.body,{x : 250, y :580});
+          });
         });
         if(gameState === 'level3Complete') {
-          this.nextLevel.position(500,300);
-          this.menu.position(500,100);
-          this.restart.position(500,200);
-          this.nextLevel.mousePressed(()=>{
-            this.restart.hide();
-            this.menu.hide();
+           this.nextLevel.show();
+           this.nextLevel.position(400,200);
+           this.menu.show();
+           this.menu.position(500,200);
+           this.restart.show();
+           this.restart.position(600,200);
+           this.nextLevel.mousePressed(()=>{
             this.nextLevel.hide();
             gameState = 'level4';
+            obstacle3 = new Ground(750,420,180,25);
+            obstacle4 = new Ground(600,420,180,25);
+            Matter.Body.setPosition(paperObject.body,{x : 250, y :580});
+            this.menu.show();
+            this.menu.position(50,50);
+            this.restart.show();
+            this.restart.position(150,50);
+          });
+          this.menu.mousePressed(()=>{
+           this.restart.hide();
+           this.menu.hide();
+           this.nextLevel.hide();
+           gameState = 'mainMenu';
+           
+          });
+           this.restart.mousePressed(()=>{
+           this.restart.hide();
+           this.menu.hide();
+           this.nextLevel.hide();
+           gameState = 'level3';
+           Matter.Body.setPosition(paperObject.body,{x:250, y:580});
           });
         }
+
         this.level4.mousePressed(()=>{
           this.level1.hide();
           this.level2.hide();
@@ -240,165 +311,6 @@ class Form {
             gameState = 'level5';
           });
         }
-        this.level5.mousePressed(()=>{
-          this.level1.hide();
-          this.level2.hide();
-          this.level3.hide();
-          this.level4.hide();
-          this.level5.hide();
-          this.level6.hide();
-          this.level7.hide();
-          this.level8.hide();
-          this.level9.hide();
-          this.level10.hide();
-          gameState = 'level5';
-          this.menu.position(50,50);
-          this.restart.position(100,50);
-        });
-        if(gameState === 'level5Complete') {
-          this.nextLevel.position(500,300);
-          this.menu.position(500,100);
-          this.restart.position(500,200);
-          this.nextLevel.mousePressed(()=>{
-            this.restart.hide();
-            this.menu.hide();
-            this.nextLevel.hide();
-            gameState = 'level6';
-          });
-        }
-        this.level6.mousePressed(()=>{
-          this.level1.hide();
-          this.level2.hide();
-          this.level3.hide();
-          this.level4.hide();
-          this.level5.hide();
-          this.level6.hide();
-          this.level7.hide();
-          this.level8.hide();
-          this.level9.hide();
-          this.level10.hide();
-          gameState = 'level6';
-          this.menu.position(50,50);
-          this.restart.position(100,50);
-        });
-        if(gameState === 'level6Complete') {
-          this.nextLevel.position(500,300);
-          this.menu.position(500,100);
-          this.restart.position(500,200);
-          this.nextLevel.mousePressed(()=>{
-            this.restart.hide();
-            this.menu.hide();
-            this.nextLevel.hide();
-            gameState = 'level7';
-          });
-        }
-        this.level7.mousePressed(()=>{
-          this.level1.hide();
-          this.level2.hide();
-          this.level3.hide();
-          this.level4.hide();
-          this.level5.hide();
-          this.level6.hide();
-          this.level7.hide();
-          this.level8.hide();
-          this.level9.hide();
-          this.level10.hide();
-          gameState = 'level7';
-          this.menu.position(50,50);
-          this.restart.position(100,50);
-        });
-        if(gameState === 'level7Complete') {
-          this.nextLevel.position(500,300);
-          this.menu.position(500,100);
-          this.restart.position(500,200);
-          this.nextLevel.mousePressed(()=>{
-            this.restart.hide();
-            this.menu.hide();
-            this.nextLevel.hide();
-            gameState = 'level8';
-          });
-        }
-        this.level8.mousePressed(()=>{
-          this.level1.hide();
-          this.level2.hide();
-          this.level3.hide();
-          this.level4.hide();
-          this.level5.hide();
-          this.level6.hide();
-          this.level7.hide();
-          this.level8.hide();
-          this.level9.hide();
-          this.level10.hide();
-          gameState = 'level8';
-          this.menu.position(50,50);
-          this.restart.position(100,50);
-        });
-        if(gameState === 'level8Complete') {
-          this.nextLevel.position(500,300);
-          this.menu.position(500,100);
-          this.restart.position(500,200);
-          this.nextLevel.mousePressed(()=>{
-            this.restart.hide();
-            this.menu.hide();
-            this.nextLevel.hide();
-            gameState = 'level9';
-          });
-        }
-        this.level9.mousePressed(()=>{
-          this.level1.hide();
-          this.level2.hide();
-          this.level3.hide();
-          this.level4.hide();
-          this.level5.hide();
-          this.level6.hide();
-          this.level7.hide();
-          this.level8.hide();
-          this.level9.hide();
-          this.level10.hide();
-          gameState = 'level9';
-          this.menu.position(50,50);
-          this.restart.position(100,50);
-        });
-        if(gameState === 'level9Complete') {
-          this.nextLevel.position(500,300);
-          this.menu.position(500,100);
-          this.restart.position(500,200);
-          this.nextLevel.mousePressed(()=>{
-            this.restart.hide();
-            this.menu.hide();
-            this.nextLevel.hide();
-            gameState = 'level10';
-          });
-        }
-        this.level10.mousePressed(()=>{
-          this.level1.hide();
-          this.level2.hide();
-          this.level3.hide();
-          this.level4.hide();
-          this.level5.hide();
-          this.level6.hide();
-          this.level7.hide();
-          this.level8.hide();
-          this.level9.hide();
-          this.level10.hide();
-          gameState = 'level10';
-          this.menu.position(50,50);
-          this.restart.position(100,50);
-        });
-        if(gameState === 'level10Complete') {
-          //this.nextLevel.position(500,300);
-          this.menu.position(500,100);
-          this.restart.position(500,300);
-          this.nextLevel.mousePressed(()=>{
-            this.restart.hide();
-            this.menu.hide();
-            this.nextLevel.hide();
-            gameState = 'level12';
-          });
-        }
 
-        this.menu.mousePressed(()=>{
-          gameState = 'mainMenu';
-        });//*/
     }
 }
